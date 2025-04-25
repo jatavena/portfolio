@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: lighter;
+    color: #D9D9D9;
+    background: radial-gradient(circle at top left, #002FA7, #001957);
+    
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+        "header main"
+        "sidebar main"
+        "space footer";
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 2fr 6fr 0.5fr;
+    gap: 2px;
+
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', sans-serif;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #e6e6e6;
+    /*line-height: 1.6;*/
+  }
+
+a {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #c9c9c9;
+    text-decoration: none;
+    transition-duration: 1s;
+    border-radius: 5px;
+}
+  
+a:hover {
+    color: #FFFFFF;
+    background-color: #0035bd;
+    font-weight: normal;
+    box-shadow: #022683 5px 5px 5px;
+    transition-duration: 1s;
+}
+
+li {
+    font-size: 18px;
+    color: #D9D9D9;
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 750px;
+    width: 1200px;
+    padding: 3rem;
+    border-top: #BFA4F4 1px solid; /*Aiempi arvo #AFCBFF*/
+    border-left: #0035bd 1px solid; /*Aiempi arvo #0035bd*/
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2); /*#022683 5px 5px 5px*/
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-area: header;
+    box-shadow: #022683 5px 0 0;
+}
+
+#headerimg {
+    display: none;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    animation: rollIn 2s ease-in-out;
+}
+
+#headerimg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/*MAIN*/
+main {
+    grid-area: main;
+}
+
+#landing {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#landing h1, h2 {
+    opacity: 1;
+    animation: landerIn 2s ease-in-out;
+}
+
+.imgcontainer {
+    animation: dropIn 2s ease-in-out;
+}
+
+#logo {
+    width: 5rem;
+    height: 5rem;
+    opacity: 1;
+    animation: rollIn 2s ease-in-out;
+    transform-origin: center center;
+}
+
+#projects {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#skills {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#aboutme {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#contact {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.contactGrid {
+    height: 750px;
+    width: 1200px;
+    padding: 3rem;
+    border-top: #BFA4F4 1px solid; /*Aiempi arvo #AFCBFF*/
+    border-left: #0035bd 1px solid; /*Aiempi arvo #0035bd*/
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2); /*#022683 5px 5px 5px*/
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+        "contacthead forms"
+        "myinfo forms";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#contacthead {
+    text-align: left;
+    margin-top: 40px;
+    display: inline;
+    grid-area: contacthead;
+}
+
+#contacthead h2 {
+    text-align: center;
+}
+
+#myinfo {
+    display: inline;
+    grid-area: myinfo;
+    text-align: left;
+}
+
+#forms {
+    grid-area: forms;
+}
+
+form {
+    margin-top: 32px;
+    grid-area: forms;
+    display: grid;
+    grid-template-areas:
+        "firstname lastname"
+        "company email"
+        "message message"
+        "submit submit";
+    grid-template-column: 1fr 1fr;
+    grid-template-row: 1fr 1fr 5fr;
+    gap: 1rem;
+}
+
+#firstname {
+    grid-area: firstname;
+}
+
+#lastname {
+    grid-area: lastname;
+}
+
+#company {
+    grid-area: company;
+}
+
+#email {
+    grid-area: email;
+}
+
+#message {
+    grid-area: message;
+}
+
+#submit {
+    justify-self: center;
+    grid-area: submit;
+    width: 50%;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #D9D9D9;
+    line-height: 1.6;
+}
+
+input, textarea {
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background-color:  #FFFFFF
+}
+
+::placeholder {
+    font-family: 'DM Sans', sans-serif;
+    color: #CCCCCC;
+}
+
+button {
+    color: #FFFFFF;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+    background: none;
+    text-decoration: none;
+    transition-duration: 1s;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+button:hover {
+    color: #FFFFFF;
+    background-color: #0035bd;
+    font-weight: normal;
+    box-shadow: #022683 5px 5px 5px;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+
+#messagesent {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes rollIn {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-500%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes landerIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+    
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s forwards;
+  }
+
+/*SIDEBAR*/
+#sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 70px;
+    gap: 50px;
+    box-shadow: #022683 5px 0 0; 
+}
+
+/*FOOTER*/
+footer {
+    grid-area: footer;
+
+}
+
+footer p {
+    color: #CCCCCC;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/*HIGHLIGHTS*/
+.hl1 {
+    color: #3FE0D0;
+}
+
+.hl2 {
+    color: #BFA4F4;
+}
+
+.hl3 {
+    color: #FFCBA4;
+}
